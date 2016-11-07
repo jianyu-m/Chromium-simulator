@@ -1,7 +1,12 @@
 
-typedef callback_args_t {
+#ifndef CALLBACK_H
+#define CALLBACK_H
+
+typedef struct callback_args_t {
   int argc;
   void **args;
 } CallbackArgs;
 
-typedef void func(CallbackArgs args) CallbackFunc;
+typedef void (*CallbackFunc)(CallbackArgs args);
+
+#endif
